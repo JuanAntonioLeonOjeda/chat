@@ -1,12 +1,12 @@
 <script setup>
-
+  console.log(import.meta.env.VUE_APP_API_URL)
 </script>
 
 <template>
-  <div>
-
-  </div>
-
+  <nav>
+    <RouterLink to="/home">Go to Home</RouterLink>
+  </nav>
+  <RouterView />
 </template>
 
 <style scoped>
