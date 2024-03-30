@@ -17,21 +17,20 @@
   </v-sheet>
 </template>
 
-<script>
+<script setup>
+import {ref} from 'vue'
+import { useRouter } from 'vue-router'
 import { login } from '../services/authService'
 
-  export default {
-    data: () => ({
-      email: ''
-    }),
-    methods: {
-      async loginRequest() {
-        const result = await login({ email: this.email })
-        console.log(result)
-        if (result.success) {
-          localStorage.setItem('token', result.result.token)
-        }
-      }
-    }
+const router = useRouter()
+const email = ref('')
+
+const loginRequest = async () => {
+  const result = await login({ email: email.value })
+  console.log(result)
+  if (result.success) {
+    localStorage.setItem('token', result.result.token)
+    router.push('/home')
   }
+}
 </script>
