@@ -13,7 +13,14 @@
       </v-avatar>
     </template>
     <v-card-actions class="flex justify-center">
-      <v-btn>
+      <v-btn 
+        v-if="conversation.length"
+      >
+        Continue
+      </v-btn>
+      <v-btn 
+        v-else
+      >
         Start
       </v-btn>
     </v-card-actions>
@@ -21,9 +28,14 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps, computed } from 'vue'
+import { useProfileStore } from '../store'
 
 const props = defineProps({
   data: Object
 })
+
+const store = useProfileStore()
+const conversation = computed(() => store.getConversations.filter(c => c.users.includes(props.data._id)))
+
 </script>

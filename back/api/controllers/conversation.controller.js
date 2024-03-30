@@ -1,10 +1,19 @@
 const Conversation = require("../models/conversation.model")
 const Message = require("../models/message.model")
+const User = require('../models/user.model')
 
 const createConversation = async (req, res) => {
   try {
     req.body.users.push(res.locals.user._id)
     const conversation = await Conversation.create(req.body)
+
+    await Promise.all(
+      req.body.users.map(async (userId) => {
+        await User.findByIdAndUpdate(userId, {
+          $push: { conversations: conversation._id }
+        })
+      })
+    )
 
     return res.status(201).json({
       success: true,
