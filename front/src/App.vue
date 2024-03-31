@@ -1,11 +1,13 @@
-<script setup>
+<script setup>  
+  import { useConnectionStore } from "./store/connection"
+  import { socket } from "./socket"
 
+  const connectionStore = useConnectionStore()
+  socket.off()
+  connectionStore.bindEvents()
 </script>
 
 <template>
-  <!-- <nav>
-    <RouterLink to="/home">Go to Home</RouterLink>
-  </nav> -->
   <RouterView />
 </template>
 
