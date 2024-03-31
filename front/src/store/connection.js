@@ -11,18 +11,22 @@ export const useConnectionStore = defineStore("connection", {
     bindEvents() {
       socket.on("connect", () => {
         this.isConnected = true
-        socket.emit('test', (res) => {
-          console.log(res)
-        })
-      })
-
+      }),
       socket.on("disconnect", () => {
         this.isConnected = false
+      }),
+      socket.on('test', (data) => {
+        console.log('Test succesful')
+        console.log(data)
       })
     },
 
     connect() {
       socket.connect()
     },
+
+    joinChat(data) {
+      socket.emit('join', data)
+    }
   },
 })

@@ -33,13 +33,18 @@ const io = socketIo(httpServer, {
 })
 
 io.on("connection", (socket) => {
-  console.log("Connection event");
-  console.log(socket);
+  console.log("Connection event")
+  
+  socket.on('join', data => {
+    console.log('room join')
+    console.log(data)
+    socket.emit('test', data)
+  })
 })
 
 httpServer.listen(process.env.PORT, async (error) => {
-  if (error) throw new Error(error);
-  await dbConnect();
+  if (error) throw new Error(error)
+  await dbConnect()
 
-  console.info(`Atrineo API running on PORT ${process.env.PORT}`);
-});
+  console.info(`Atrineo API running on PORT ${process.env.PORT}`)
+})
