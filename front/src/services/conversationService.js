@@ -28,9 +28,9 @@ const addMessage = async (id, body) => {
   }
 }
 
-const getConversation = async (body) => {
+const getConversation = async (id) => {
   try {
-    const { data } = await api.get("conversation", {
+    const { data } = await api.get(`conversation/${id}`, {
       headers: {
         token: localStorage.token,
       },
