@@ -15,18 +15,18 @@ export const useConnectionStore = defineStore("connection", {
       socket.on("disconnect", () => {
         this.isConnected = false
       }),
-      socket.on('test', (data) => {
-        console.log('Test succesful')
-        console.log(data)
+      socket.on('notify', (data) => {
+        console.log('notified')
       })
     },
-
     connect() {
       socket.connect()
     },
-
     joinChat(data) {
       socket.emit('join', data)
+    },
+    sendMessage(data) {
+      socket.emit('send', data)
     }
   },
 })

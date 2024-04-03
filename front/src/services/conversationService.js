@@ -16,7 +16,7 @@ const createConversation = async (body) => {
 
 const addMessage = async (id, body) => {
   try {
-    const { data } = await api.post(`conversation/add${id}`, body, {
+    const { data } = await api.put(`conversation/add/${id}`, body, {
       headers: {
         token: localStorage.token,
       },
