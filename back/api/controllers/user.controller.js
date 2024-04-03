@@ -90,18 +90,23 @@ const getOwnProfile = async (req, res) => {
 
 const addFriend = async (req, res) => {
   try {
-    const friend = await User.findById(req.params.id)
+    const user = res.locals.user
+    const friend = await User.findByIdAndUpdate(req.params.id, {
+      $push: {
+        friends: user._id
+      }
+    })
 
     if (!friend) {
       return res.status(404).json({
         success: false,
         message: "User not found",
-      });
+      })
     }
 
-    const user = res.locals.user
     user.friends.push(friend._id)
     await user.save()
+
 
     return res.status(200).json({
       success: true,
