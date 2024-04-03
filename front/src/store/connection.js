@@ -4,19 +4,19 @@ import { socket } from "../socket"
 export const useConnectionStore = defineStore("connection", {
   state: () => ({
     isConnected: false,
-    chats: []
+    messages: []
   }),
 
   actions: {
     bindEvents() {
       socket.on("connect", () => {
-        this.isConnected = true
+        this.isConnected = true;
       }),
       socket.on("disconnect", () => {
-        this.isConnected = false
+        this.isConnected = false;
       }),
-      socket.on('notify', (data) => {
-        console.log('notified')
+      socket.on("notify", (data) => {
+        this.addMessage(data.message)
       })
     },
     connect() {
@@ -27,6 +27,13 @@ export const useConnectionStore = defineStore("connection", {
     },
     sendMessage(data) {
       socket.emit('send', data)
+      this.addMessage(data.message)
+    },
+    addMessage(message) {
+      this.messages.push(message)
+    },
+    setMessages(arr) {
+      this.messages = arr
     }
   },
 })

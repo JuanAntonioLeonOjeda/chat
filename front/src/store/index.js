@@ -11,5 +11,10 @@ export const useProfileStore = defineStore("profile", () => {
   const getConversations = computed(() => conversations.value)
   const setConversations = (arr) => conversations.value = arr
   
-  return { getUser, getConversations, setUser, setConversations }
+  return { 
+    getUser, 
+    getConversations, 
+    setUser, 
+    setConversations 
+  }
 })

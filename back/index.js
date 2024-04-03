@@ -5,17 +5,11 @@ require("dotenv").config()
 const express = require("express")
 const cors = require("cors")
 const morgan = require("morgan")
- const http = require("http")
+const http = require("http")
 
 const dbConnect = require("./database")
 const socketIo = require("socket.io")
 
-// const httpServer = require('http').createServer()
-// const io = require('socket.io')(httpServer, {
-//   cors: {
-//     origin: '*'
-//   }
-// })
 
 const app = express()
   .use(cors())
@@ -33,18 +27,24 @@ const io = socketIo(httpServer, {
 })
 
 io.on("connection", (socket) => {
-  console.log("Connection event")
+  console.log("Socket connection succesful")
   
   socket.on('join', data => {
-    console.log('room join')
-    console.log(data)
-    socket.emit('test', data)
+    socket.roomId = data.id
+    socket.join(data.id)
+
+    socket.on('send', data => {
+      socket.to(socket.roomId).emit('notify', data)
+    })
   })
+
+  socket.on
+
 })
 
 httpServer.listen(process.env.PORT, async (error) => {
   if (error) throw new Error(error)
   await dbConnect()
 
-  console.info(`Atrineo API running on PORT ${process.env.PORT}`)
+  console.info(`Chat API running on PORT ${process.env.PORT}`)
 })
