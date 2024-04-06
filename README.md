@@ -1,6 +1,7 @@
 # CHAT DEMO
 
-![TRY DEMO](https://chatreboot.netlify.app/)
+<a href="https://chatreboot.netlify.app/" target="_blank">Try Demo</a>
+
 
 ## MAIN DEPENDENCIES
 ![Node JS](https://img.shields.io/badge/NODE.JS-20.11.30-yellow?style=for-the-badge&logo=nodedotjs)
