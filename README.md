@@ -36,12 +36,13 @@ You can login as one of the following:
   <img height=500 src="/dbDiagram.png" />
 </p>
 #### User
-- `name`: user's name
-- `email`: user's email - UNIQUE
+
+- `name`
+- `email`: user's email (unique value)
 - `friends`: array of other user's ids who have been added as friends
 - `conversations`: array of conversation ids that the user has started with a friend
-- `online`: status to check if user is active or not
-- `avatar`: profile picture
+- `online`: status to check if user is active or not (default value: false)
+- `avatar`: profile picture (default value: https://www.salisburyut.com/wp-content/uploads/2020/09/avatar-1-2048x2048.jpeg)
 
 #### Conversation
 
