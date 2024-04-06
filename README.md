@@ -1,5 +1,7 @@
 # CHAT DEMO
 
+![TRY DEMO](https://chatreboot.netlify.app/)
+
 ## MAIN DEPENDENCIES
 ![Node JS](https://img.shields.io/badge/NODE.JS-20.11.30-yellow?style=for-the-badge&logo=nodedotjs)
 ![ExpressJS](https://img.shields.io/badge/EXPRESS-4.19.1-yellow?style=for-the-badge&logo=express)
