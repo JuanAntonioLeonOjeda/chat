@@ -1,6 +1,15 @@
 # CHAT DEMO
-Small implementation of a private live chat using Socket.io and data storage in the cloud 
-<a href="https://chatreboot.netlify.app/" target="_blank">Try Demo</a>
+Small implementation of a private live chat using Socket.io and data storage in the cloud.
+
+## MAIN FEATURES
+- User login
+- Users have friends they can talk with
+- Private rooms for each friend
+- Conversation storage in the cloud so users can continue their conversations in a different device
+
+<div>
+  <a href="https://chatreboot.netlify.app/" target="_blank">Try Demo</a>
+</div>
 
 ## MAIN DEPENDENCIES
 ![Node JS](https://img.shields.io/badge/NODE.JS-20.11.30-yellow?style=for-the-badge&logo=nodedotjs)
@@ -18,3 +27,12 @@ Small implementation of a private live chat using Socket.io and data storage in 
 ## BACKEND
 
 ## FRONTEND
+
+## DEVELOPING PROCESS
+
+## MAIN DIFFICULTIES
+
+## FUTRE IMPLEMENTATIONS
+- Add SQLite so users can have a database in their device, improving performance
+- End-to-End message encryption
+- Improve Styling
