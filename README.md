@@ -10,6 +10,12 @@ Small implementation of a private live chat using Socket.io and data storage in 
 <div>
   <a href="https://chatreboot.netlify.app/" target="_blank">Try Demo</a>
 </div>
+You can login as one of the following:
+- juanan@gmail.com
+- tati@gmail.com
+- kimchi@gmail.com
+- ada@gmail.com
+- turing@gmail.com
 
 ## MAIN DEPENDENCIES
 ![Node JS](https://img.shields.io/badge/NODE.JS-20.11.30-yellow?style=for-the-badge&logo=nodedotjs)
