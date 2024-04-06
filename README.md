@@ -43,6 +43,12 @@ You can login as one of the following:
 
 ## MAIN DIFFICULTIES
 
+## MAIN DOCUMENTATION SOURCES
+- [Socket.io tutorial](https://socket.io/get-started/private-messaging-part-1/)
+- [Vue3 Documentation](https://vuejs.org/guide/essentials/reactivity-fundamentals.html)
+- [Pinia Documentation](https://pinia.vuejs.org/core-concepts/)
+- ... and ChatGPT :sweat_smile:
+
 ## FUTURE IMPLEMENTATIONS
 - Add SQLite so users can have a database in their device, improving performance
 - End-to-End message encryption
