@@ -35,8 +35,8 @@ You can login as one of the following:
 <p align="center">
   <img height=500 src="/dbDiagram.png" />
 </p>
-#### User
 
+#### User
 - `name`
 - `email`: user's email (unique value)
 - `friends`: array of other user's ids who have been added as friends
