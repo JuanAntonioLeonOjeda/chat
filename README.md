@@ -52,7 +52,7 @@ GET    | /user            | -     | Get All Users            |                  
 GET    | /user/:id        | -     | Get One User             |                                                 | { success: `boolean`, message: `string`, result: `object`}
 GET    | /user/profile    | YES   | Get Own Profile          |                                                 | { success: `boolean`, message: `string`, result: `object`}
 POST   | /user            | -     | Create One User          |  `name`, `email`, `avatar`                      | { success: `boolean`, message: `string`, result: `object`}
-PUT    | /user/:id        | -     | Update One User          |  `name`, `email`, `avatar          `            | { success: `boolean`, message: `string`, result: `object`}
+PUT    | /user/:id        | -     | Update One User          |  `name`, `email`, `avatar`                      | { success: `boolean`, message: `string`, result: `object`}
 PUT    | /user/add/:id    | YES   | Add friend to logged User|                                                 | { success: `boolean`, message: `string`, result: `friends array`}
 DELETE | /user/:id        | -     | Delete One User          |                                                 | { success: `boolean`, message: `string`, result: `object`}
 
