@@ -33,8 +33,9 @@ You can login as one of the following:
 
 
 ## BACKEND
-
-
+<p align="center">
+  <img height=500 src="/dbDiagram.png" />
+</p>
 
 ## FRONTEND
 
