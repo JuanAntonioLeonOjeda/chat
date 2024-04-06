@@ -35,6 +35,17 @@ You can login as one of the following:
 <p align="center">
   <img height=500 src="/dbDiagram.png" />
 </p>
+#### User
+- `name`: user's name
+- `email`: user's email - UNIQUE
+- `friends`: array of other user's ids who have been added as friends
+- `conversations`: array of conversation ids that the user has started with a friend
+- `online`: status to check if user is active or not
+- `avatar`: profile picture
+
+#### Conversation
+
+### Message
 
 ### API ENDPOINTS
 
