@@ -18,7 +18,6 @@ You can login as one of the following:
 - `ada@gmail.com`
 - `turing@gmail.com`
 
-
 ## MAIN DEPENDENCIES
 ![Node JS](https://img.shields.io/badge/NODE.JS-20.11.30-yellow?style=for-the-badge&logo=nodedotjs)
 ![ExpressJS](https://img.shields.io/badge/EXPRESS-4.19.1-yellow?style=for-the-badge&logo=express)
@@ -31,17 +30,34 @@ You can login as one of the following:
 ![Vuetify](https://img.shields.io/badge/VUETIFY-3.5.12-1867C0?style=for-the-badge&logo=vuetify&logoColor=1867C0)
 ![Axios](https://img.shields.io/badge/AXIOS-1.6.8-5A29E4?style=for-the-badge&logo=axios&logoColor=5A29E4)
 
-
 ## BACKEND
+### DB DIAGRAM
 <p align="center">
   <img height=500 src="/dbDiagram.png" />
 </p>
 
+### API ENDPOINTS
+
 ## FRONTEND
 
-## DEVELOPING PROCESS
+## DEVELOPING TIME
+**Total Time for MVP** - 2 weeks (Partial dedication)
+### BACKEND
+- **DB Design and corrections** - 2 days
+- **Basic CRUD** - 2 days
+- **Adding Socket.io** - 1 day
+### FRONTEND
+- **Adding Socket.io client** - 1 day 
+- **Join a chat** - 1 day
+- **Functional conversation** - 2 days
+- 
+*Note for future projects: keep a tasks diary for better time descriptions*
 
 ## MAIN DIFFICULTIES
+- Understanding the flow of using Socket.io
+- Adding Socket.io inside the express instance
+- Understading where to store Socket.io's events in the front
+- Integrating Vue3 and Pinia
 
 ## MAIN DOCUMENTATION SOURCES
 - [Socket.io tutorial](https://socket.io/get-started/private-messaging-part-1/)
