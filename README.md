@@ -46,7 +46,7 @@ You can login as one of the following:
 
 #### Conversation
 
-### Message
+#### Message
 
 ### API ENDPOINTS
 
