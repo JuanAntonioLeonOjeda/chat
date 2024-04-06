@@ -38,6 +38,24 @@ You can login as one of the following:
 
 ### API ENDPOINTS
 
+#### Authentication
+
+METHOD | ENDPOINT         | TOKEN | DESCRIPTION              | POST PARAMS                                     | RETURNS
+-------|------------------|-------|--------------------------|-------------------------------------------------|--------------------
+POST   | /auth/login      | -     | User Login               | `email`                                         | { success: `boolean`, message: `string`, result: `{ token, user }`}
+
+### User Endpoints
+
+METHOD | ENDPOINT         | TOKEN | DESCRIPTION              | POST PARAMS                                     | RETURNS
+-------|------------------|-------|--------------------------|-------------------------------------------------|--------------------
+GET    | /user            | -     | Get All Users            |                                                 | { success: `boolean`, message: `string`, result: `array`}
+GET    | /user/:id        | -     | Get One User             |                                                 | { success: `boolean`, message: `string`, result: `object`}
+GET    | /user/profile    | YES   | Get Own Profile          |                                                 | { success: `boolean`, message: `string`, result: `object`}
+POST   | /user            | -     | Create One User          |  `name`, `email`, `avatar`                      | { success: `boolean`, message: `string`, result: `object`}
+PUT    | /user/:id        | -     | Update One User          |  `name`, `email`, `avatar          `            | { success: `boolean`, message: `string`, result: `object`}
+PUT    | /user/add/:id    | YES   | Add friend to logged User|                                                 | { success: `boolean`, message: `string`, result: `friends array`}
+DELETE | /user/:id        | -     | Delete One User          |                                                 | { success: `boolean`, message: `string`, result: `object`}
+
 ## FRONTEND
 
 ## DEVELOPING TIME
@@ -50,7 +68,7 @@ You can login as one of the following:
 - **Adding Socket.io client** - 1 day 
 - **Join a chat** - 1 day
 - **Functional conversation** - 2 days
-- 
+
 *Note for future projects: keep a tasks diary for better time descriptions*
 
 ## MAIN DIFFICULTIES
