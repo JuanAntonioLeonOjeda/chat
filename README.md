@@ -30,8 +30,6 @@ You can login as one of the following:
 ![Vuetify](https://img.shields.io/badge/VUETIFY-3.5.12-1867C0?style=for-the-badge&logo=vuetify&logoColor=1867C0)
 ![Axios](https://img.shields.io/badge/AXIOS-1.6.8-5A29E4?style=for-the-badge&logo=axios&logoColor=5A29E4)
 
-## FRONTEND
-
 ## DEVELOPING TIME
 **Total Time for MVP** - 2 weeks (Partial dedication)
 ### BACKEND
