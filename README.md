@@ -24,6 +24,7 @@ You can login as one of the following:
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Mongoose](https://img.shields.io/badge/MONGOOSE-8.2.3-880000?style=for-the-badge&logo=mongoose&logoColor=880000)
 ![SocketIO](https://img.shields.io/badge/SOCKET.IO-4.7.5-black?style=for-the-badge&logo=socketdotio)
+![SocketIOClient](https://img.shields.io/badge/SOCKET.IO%20CLIENT-4.7.5-black?style=for-the-badge&logo=socketdotio)
 ![JSONWebToken](https://img.shields.io/badge/JWT-9.0.2-black?style=for-the-badge&logo=jsonwebtokens)
 ![Dotenv](https://img.shields.io/badge/DOTENV-16.4.5-black?style=for-the-badge&logo=dotenv&logoColor=white)
 ![Vue](https://img.shields.io/badge/VUE.JS-3.4.21-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=#4FC08D)
