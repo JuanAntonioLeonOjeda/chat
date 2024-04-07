@@ -51,10 +51,21 @@ DELETE | /user/:id        | -     | Delete One User          |                  
 
 METHOD | ENDPOINT         | TOKEN | DESCRIPTION              | POST PARAMS                                     | RETURNS
 -------|------------------|-------|--------------------------|-------------------------------------------------|--------------------
-GET    | /user            | -     | Get All Users            |                                                 | { success: `boolean`, message: `string`, result: `array`}
-GET    | /user/:id        | -     | Get One User             |                                                 | { success: `boolean`, message: `string`, result: `object`}
-GET    | /user/profile    | YES   | Get Own Profile          |                                                 | { success: `boolean`, message: `string`, result: `object`}
-POST   | /user            | -     | Create One User          |  `name`, `email`, `avatar`                      | { success: `boolean`, message: `string`, result: `object`}
-PUT    | /user/:id        | -     | Update One User          |  `name`, `email`, `avatar`                      | { success: `boolean`, message: `string`, result: `object`}
-PUT    | /user/add/:id    | YES   | Add friend to logged User|                                                 | { success: `boolean`, message: `string`, result: `friends array`}
-DELETE | /user/:id        | -     | Delete One User          |                                                 | { success: `boolean`, message: `string`, result: `object`}
+GET    | /conversation            | -     | Get All Conversations            |                                                 | { success: `boolean`, message: `string`, result: `array`}
+GET    | /conversation/:id        | -     | Get One Conversation             |                                                 | { success: `boolean`, message: `string`, result: `object`}
+POST   | /conversation            | YES   | Create One Conversation          |  `users`                                      | { success: `boolean`, message: `string`, result: `object`}
+PUT    | /conversation/:id        | -     | Update One Conversation          |  `title`, `createdAt`, `updatedAt`              | { success: `boolean`, message: `string`, result: `object`}
+PUT    | /conversation/add/:id    | YES   | Add message to Conversation      |   `text`                                           | { success: `boolean`, message: `string`, result: `message object`}
+DELETE | /conversation/:id        | -     | Delete One Conversation          |                                                 | { success: `boolean`, message: `string`, result: `object`}
+
+**NOTE**: *Add message to conversation first creates the message in the database and add automatically adds it to the conversations passed at the route param. You don't need to also call the 'create message' request*
+
+### Message Endpoints
+
+METHOD | ENDPOINT         | TOKEN | DESCRIPTION              | POST PARAMS                                     | RETURNS
+-------|------------------|-------|--------------------------|-------------------------------------------------|--------------------
+GET    | /message            | -     | Get All Messages            |                                                 | { success: `boolean`, message: `string`, result: `array`}
+GET    | /message/:id        | -     | Get One Message             |                                                 | { success: `boolean`, message: `string`, result: `object`}
+POST   | /message            | YES   | Create One Message          |  `text`                                      | { success: `boolean`, message: `string`, result: `object`}
+PUT    | /message/:id        | -     | Update One Message          |  `text`, `createdAt`                         | { success: `boolean`, message: `string`, result: `object`}
+DELETE | /message/:id        | -     | Delete One Message          |                                                 | { success: `boolean`, message: `string`, result: `object`}
