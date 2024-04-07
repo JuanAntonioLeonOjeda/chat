@@ -10,7 +10,11 @@
         icon
         @click="submit"
       >
-      <img src="/reboot_logo.png" alt="Send" />
+        <img 
+          src="/reboot_logo.png" 
+          alt="Send" 
+          class="image-icon"
+        />
       </v-btn>
     </div>
   </div>
@@ -54,3 +58,11 @@ onMounted(async () => {
   connectionStore.setMessages(result.messages)
 })
 </script>
+
+<style>
+.image-icon {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+</style>
