@@ -4,12 +4,14 @@
     <div v-for="(message, index) in messages" :key="index">
       <TextCard :message="message.text" :isMe="checkAuthor(message.sender)"/>
     </div>
-    <div class="d-flex space-between">
+    <div class="d-flex space-between mt-2">
       <v-text-field v-model="text" @keydown="submit"/>
       <v-btn
-        icon="/reboot_logo.png"
+        icon
         @click="submit"
-      />
+      >
+      <img src="/reboot_logo.png" alt="Send" />
+      </v-btn>
     </div>
   </div>
 </template>
