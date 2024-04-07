@@ -77,13 +77,13 @@ const getConversationById = async (req, res) => {
 
 const addMessage = async (req,res) => {
   try {
-    const conversation = await Conversation.findById(req.params.id);
+    const conversation = await Conversation.findById(req.params.id)
 
     if (!conversation) {
       return res.status(404).json({
         success: false,
         message: "Conversation not found",
-      });
+      })
     }
 
     req.body = {
@@ -96,19 +96,20 @@ const addMessage = async (req,res) => {
 
     conversation.messages.push(message._id)
     conversation.lastMessage = message._id
+    conversation.updatedAt = Date.now()
     await conversation.save()
 
     return res.status(201).json({
       success: true,
       message: "Message added successfully",
       result: message,
-    });
+    })
   } catch (error) {
     return res.status(500).json({
       success: false,
       message: "Error adding message",
       description: error.message,
-    });
+    })
   }
 }
 
