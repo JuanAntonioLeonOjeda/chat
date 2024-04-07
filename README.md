@@ -57,6 +57,7 @@ You can login as one of the following:
 - ... and ChatGPT :sweat_smile:
 
 ## FUTURE IMPLEMENTATIONS
+- Add group chats
 - Add SQLite so users can have a database in their device, improving performance
 - End-to-End message encryption
 - Upload files/images (via cloudinary probably)
