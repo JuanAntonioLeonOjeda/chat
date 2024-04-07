@@ -9,9 +9,7 @@
       <v-btn
         icon="/reboot_logo.png"
         @click="submit"
-      >
-        Send
-      </v-btn>
+      />
     </div>
   </div>
 </template>
