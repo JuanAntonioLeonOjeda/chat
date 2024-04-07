@@ -1,4 +1,7 @@
 # BACKEND
+This part of the project is in charge of establishing the socket connection in the API. It not only listens to http requests for the API to manage, it also listens to socket events and emits an answer to the users involved in the event (for example, emit a new message to the message receiver).
+The back is connected to a Database where it stores all users, conversations and messages. In case a user logs in through a different device, they can access their previous information.
+
 ## DB DIAGRAM
 <p align="center">
   <img height=500 src="/dbDiagram.png" />
