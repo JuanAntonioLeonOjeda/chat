@@ -51,7 +51,8 @@ You can login as one of the following:
 - Integrating Vue3 and Pinia
 
 ## MAIN DOCUMENTATION SOURCES
-- [Socket.io tutorial](https://socket.io/get-started/private-messaging-part-1/)
+- [Socket.io Documentation](https://socket.io/docs/v4/tutorial/introduction)
+- [Socket.io Chat tutorial](https://socket.io/get-started/private-messaging-part-1/)
 - [Vue3 Documentation](https://vuejs.org/guide/essentials/reactivity-fundamentals.html)
 - [Pinia Documentation](https://pinia.vuejs.org/core-concepts/)
 - ... and ChatGPT :sweat_smile:
