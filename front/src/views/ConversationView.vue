@@ -4,7 +4,15 @@
     <div v-for="(message, index) in messages" :key="index">
       <TextCard :message="message.text" :isMe="checkAuthor(message.sender)"/>
     </div>
-    <v-text-field v-model="text" @keydown="submit"/>
+    <div class="d-flex space-between">
+      <v-text-field v-model="text" @keydown="submit"/>
+      <v-btn
+        icon="/reboot_logo.png"
+        @click="submit"
+      >
+        Send
+      </v-btn>
+    </div>
   </div>
 </template>
 
@@ -21,11 +29,14 @@ const text = ref('')
 const store = useProfileStore()
 const connectionStore = useConnectionStore()
 const route = useRoute()
+//List of messages in the conversation to be displayed
 const messages = computed(() => connectionStore.messages)
 
 const submit = async (e) => {
-  if (e.key === 'Enter') {
+  if (e.type === 'click' || (e.type === 'keydown' && e.key === 'Enter')) {
+    //API request to save the message in DB
     const { result } = await addMessage(route.params.id, { text:text.value })
+    //Emit the socket's 'send' event, to notify other users connected to the same roomId
     connectionStore.sendMessage({ user: store.user, message: result })
     text.value = ''
   }
@@ -36,8 +47,10 @@ const checkAuthor = (id) => {
 }
 
 onMounted(async () => {
+  //Join the chat room, sending the conversation id as roomId
   connectionStore.joinChat({id: route.params.id, user: store.user})
   const { result } = await getConversation(route.params.id)
+  //Retrieve the conversation's message list and save it in the store
   connectionStore.setMessages(result.messages)
 })
 </script>

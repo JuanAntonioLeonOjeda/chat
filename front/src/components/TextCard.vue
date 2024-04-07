@@ -10,6 +10,7 @@ const props = defineProps({
   isMe: Boolean
 })
 
+//Style the message differently depending if the logged user is the author or not
 const checkAuthor = computed(() => {
   return props.isMe ? 'text-end bg-light-blue-lighten-3' : 'text-start bg-green-darken-1'
 })
