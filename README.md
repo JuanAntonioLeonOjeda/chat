@@ -59,7 +59,7 @@ You can login as one of the following:
 
 ## FUTURE IMPLEMENTATIONS
 - Add group chats
-- Add SQLite so users can have a database in their device, improving performance
+- Add SQLite so users can have a local database in their device, improving performance
 - End-to-End message encryption
 - Upload files/images (via cloudinary probably)
 - Improve Styling
