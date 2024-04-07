@@ -26,17 +26,17 @@ const messages = computed(() => connectionStore.messages)
 const submit = async (e) => {
   if (e.key === 'Enter') {
     const { result } = await addMessage(route.params.id, { text:text.value })
-    connectionStore.sendMessage({ user: store.getUser, message: result })
+    connectionStore.sendMessage({ user: store.user, message: result })
     text.value = ''
   }
 }
 
 const checkAuthor = (id) => {
-  return id === store.getUser._id
+  return id === store.user._id
 }
 
 onMounted(async () => {
-  connectionStore.joinChat({id: route.params.id, user: store.getUser})
+  connectionStore.joinChat({id: route.params.id, user: store.user})
   const { result } = await getConversation(route.params.id)
   connectionStore.setMessages(result.messages)
 })

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted} from 'vue'
+import { onMounted } from 'vue'
 import { useProfileStore } from '../store/index'
 import { getOwnProfile } from '../services/userService'
 
@@ -16,11 +16,11 @@ onMounted(async () => {
 
 <template>
   <h1>
-    Welcome, {{ store.getUser?.name }}!
+    Welcome, {{ store.user?.name }}!
   </h1>
-  <div v-if="store.getUser.friends?.length">
+  <div v-if="store.user.friends?.length">
     <CardComponent
-      v-for="(friend, idx) in store.getUser?.friends"
+      v-for="(friend, idx) in store.user?.friends"
       :key="idx"
       :data="friend" 
     />

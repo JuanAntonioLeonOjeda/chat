@@ -42,7 +42,7 @@ const props = defineProps({
 })
 
 const store = useProfileStore()
-const conversation = computed(() => store.getConversations.filter(c => c.users.includes(props.data._id)))
+const conversation = computed(() => store.conversations.filter(c => c.users.includes(props.data._id)))
 
 const continueConversation = () => {
   const id = conversation.value[0]._id
