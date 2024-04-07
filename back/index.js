@@ -9,8 +9,13 @@ const socketIo = require("socket.io")
 
 const dbConnect = require("./database")
 
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+  optionsSuccessStatus: 200
+}
+
 const app = express()
-  .use(cors("https://chatreboot.netlify.app/"))
+  .use(cors(corsOptions))
   .use(morgan("dev"))
   .use(express.json())
   .use(express.urlencoded({ extended: true }))
@@ -20,7 +25,8 @@ const httpServer = http.createServer(app)
 
 const io = socketIo(httpServer, {
   cors: {
-    origin: "https://chatreboot.netlify.app/"
+    origin: process.env.CLIENT_URL,
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
   }
 })
 
