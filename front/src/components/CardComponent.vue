@@ -1,7 +1,6 @@
 <template>
   <v-card
-    class="mx-auto my-10"
-    max-width="344"
+    class="mx-auto my-10 w-25"
     :title="data.name"
   >
     <template v-slot:prepend>
@@ -15,13 +14,13 @@
     <v-card-actions class="flex justify-center">
       <v-btn 
         v-if="conversation.length"
-        @click="continueConversation()"
+        @click="handleConversation()"
       >
         Continue
       </v-btn>
       <v-btn 
         v-else
-        @click="newConversation()"
+        @click="handleConversation()"
       >
         Start
       </v-btn>
@@ -44,16 +43,22 @@ const props = defineProps({
 const store = useProfileStore()
 const conversation = computed(() => store.conversations.filter(c => c.users.includes(props.data._id)))
 
-const continueConversation = () => {
-  const id = conversation.value[0]._id
-  router.push(`/conv/${id}`)
-}
+const handleConversation = async () => {
+  store.setConversingWith(props.data.name)
+  const existingConversation = conversation.value[0]
 
-const newConversation = async () => {
-  const { result } = await createConversation({
-    users: [ props.data._id ]
-  })
-  router.push(`/conv/${result._id}`)
+  let conversationId
+
+  if (existingConversation) {
+    conversationId = existingConversation._id
+  } else {
+    const { result } = await createConversation({
+      users: [props.data._id]
+    })
+    conversationId = result._id
+  }
+
+  router.push(`/conv/${conversationId}`)
 }
 
 </script>

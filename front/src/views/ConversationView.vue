@@ -1,6 +1,6 @@
 <template>
   <div>
-    Conversation {{ $route.params.id }}
+    Conversation with {{ store.conversingWith }}
     <div v-for="(message, index) in messages" :key="index">
       <TextCard :message="message.text" :isMe="checkAuthor(message.sender)"/>
     </div>

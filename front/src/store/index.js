@@ -4,6 +4,7 @@ export const useProfileStore = defineStore("profile", {
   state: () => ({
     user: {},
     conversations: [],
+    conversingWith: ''
   }),
   actions: {
     setUser(obj) {
@@ -11,6 +12,9 @@ export const useProfileStore = defineStore("profile", {
     },
     setConversations(arr) {
       this.conversations = arr
+    },
+    setConversingWith(name) {
+      this.conversingWith = name
     }
   }
 })
