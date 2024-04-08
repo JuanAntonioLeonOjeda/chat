@@ -51,6 +51,8 @@ const checkAuthor = (id) => {
 }
 
 onMounted(async () => {
+  // Clean messages from previous conversation if there was one
+  connectionStore.setMessages([])
   //Join the chat room, sending the conversation id as roomId
   connectionStore.joinChat({id: route.params.id, user: store.user})
   const { result } = await getConversation(route.params.id)
